@@ -31,12 +31,24 @@
 </p>
 <br />-->
 
-# 📚 Sobre
+## Índice
+
+* [1. Sobre](#1-sobre)
+* [2. Requisitos obrigatórios do desafio](#2-requisitos-obrigatorios)
+* [3. Tecnologias utilizadas](#3-tecnologias-utilizadas)
+* [4. Instalação da aplicação](#4-instalacao-da-aplicação)
+* [5. API Endpoints](#5-api-endpoints)
+* [6. Autoras](#6-autoras)
+* [7. Contato](#7-contato)
+
+***
+
+## 📚 Sobre
 <!--Adicionar descrição do projeto-->
 A aplicação foi desenvolvida visando atender os requisitos obrigatórios do desafio Luiza Code. Além disso...
 <br />
   
-####  :heavy_check_mark: Requisitos obrigatórios do desafio
+###  :heavy_check_mark: Requisitos obrigatórios do desafio
 <!--Adicionar requisitos obrigatórios do porojeto-->
   -  
   - 
@@ -87,10 +99,11 @@ Para instalação é necessário ter o Python e o FastAPI instalados na máquina
 <!--Adicionar imagem da documentação da API-opcional-->
 </p>
 
+## :woman_technologist: Autoras: 
 
-# :postbox: Contato
+Projeto desenvolvido por: **Josiane Magalhães, Aline Marques, Nathália Rodrigues, Simone Lima, Vanessa Lima** 👋
 
-Desenvolvido por **Josiane Magalhães, Aline Marques, Nathália Rodrigues, Simone Lima, Vanessa Lima** 👋🏻
+## :postbox: Contato
 
 **Linkedin**: 
 - [Josiane Magalhães](https://www.linkedin.com/in/josianemagalhaes/)
@@ -98,6 +111,3 @@ Desenvolvido por **Josiane Magalhães, Aline Marques, Nathália Rodrigues, Simon
 - [Nathália Rodrigues](https://www.linkedin.com/in/naaahrodrigues/)
 - [Simone Lima](https://www.linkedin.com/in/simone-lorenzini-lima-financeiro/)
 - [Vanessa Lima](https://www.linkedin.com/in/vanessacristinadelima/)
-
-
-  
