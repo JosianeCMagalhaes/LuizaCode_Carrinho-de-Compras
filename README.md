@@ -12,7 +12,7 @@
 </h2>
   
 <h3 align="center">
-  API RESTful com FastAPI Framework e Python.
+  API REST com FastAPI Framework e Python.
 </h3>
   
 <!--Opcional
