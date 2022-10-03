@@ -33,7 +33,7 @@
 
 ## Índice
 
-* [Sobre](#sobre)
+* [1. Sobre](#1-sobre)
 * [2. Requisitos obrigatórios do desafio](#2-requisitos-obrigatorios)
 * [3. Tecnologias utilizadas](#3-tecnologias-utilizadas)
 * [4. Instalação da aplicação](#4-instalacao-da-aplicação)
