@@ -43,29 +43,29 @@
 
 ***
 
-## 1. Sobre
+## 1. Sobre 📚
 <!--Adicionar descrição do projeto-->
 A aplicação foi desenvolvida visando atender os requisitos obrigatórios do desafio Luiza Code. Além disso...
 <br />
   
-### 2. :heavy_check_mark: Requisitos obrigatórios do desafio
+### 2. Requisitos obrigatórios do desafio :heavy_check_mark:
 <!--Adicionar requisitos obrigatórios do porojeto-->
   -  
   - 
   - 
   -
 
-## 3. 💻 Tecnologias utilizadas
+## 3. Tecnologias utilizadas 💻
 <!--Adicionar tecnologias utilizadas-->
 Para o desenvolvimento dessa aplicação foi utilizado o framework FastAPI para a criação da API, juntamente com o banco de dados MongoDB... 
 
 
-## 4. :pencil: Instalação da aplicação 
+## 4. Instalação da aplicação :pencil:
 
 Para instalação é necessário ter o Python e o FastAPI instalados na máquina.
 <!--Adicionar os passos para instalação, referência: https://www.alura.com.br/artigos/como-criar-apis-python-usando-fastapi-->
 
-## 5. 💻 API Endpoints
+## 5. API Endpoints 💻
 <!--Adicionar os end points solicitados no projeto-->
   
 <!--exemplos
@@ -99,11 +99,11 @@ Para instalação é necessário ter o Python e o FastAPI instalados na máquina
 <!--Adicionar imagem da documentação da API-opcional-->
 </p>
 
-## 6. :woman_technologist: Autoras: 
+## 6. Autoras :woman_technologist:
 
 Projeto desenvolvido por: **Josiane Magalhães, Aline Marques, Nathália Rodrigues, Simone Lima, Vanessa Lima** 👋
 
-## 7. :postbox: Contato
+## 7. Contato :postbox:
 
 **Linkedin**: 
 - [Josiane Magalhães](https://www.linkedin.com/in/josianemagalhaes/)
