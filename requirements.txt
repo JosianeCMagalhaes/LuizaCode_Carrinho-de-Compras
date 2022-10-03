@@ -1,0 +1,16 @@
+fastapi
+fastapi-mail
+uvicorn
+pydantic
+redis
+motor
+python-decouple
+python-multipart
+PyJWT
+passlib
+dnspython
+email-validator
+idna
+install
+pymongo
+typing-extensions
