@@ -33,7 +33,7 @@
 
 ## Índice
 
-* [📚1. Sobre](#1-sobre)
+* [1. Sobre](#1-sobre)
 * [2. Requisitos obrigatórios do desafio](#2-requisitos-obrigatorios)
 * [3. Tecnologias utilizadas](#3-tecnologias-utilizadas)
 * [4. Instalação da aplicação](#4-instalacao-da-aplicação)
@@ -43,7 +43,7 @@
 
 ***
 
-## 📚 1. Sobre
+## 1. Sobre 📚
 <!--Adicionar descrição do projeto-->
 A aplicação foi desenvolvida visando atender os requisitos obrigatórios do desafio Luiza Code. Além disso...
 <br />
