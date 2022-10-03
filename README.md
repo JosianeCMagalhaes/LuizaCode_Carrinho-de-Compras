@@ -43,7 +43,7 @@
 
 ***
 
-## 📚 Sobre
+## 1. Sobre
 <!--Adicionar descrição do projeto-->
 A aplicação foi desenvolvida visando atender os requisitos obrigatórios do desafio Luiza Code. Além disso...
 <br />
