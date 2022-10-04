@@ -34,9 +34,9 @@
 ## Índice
 
 * [1. Sobre](#1-sobre)
-* [2. Requisitos obrigatórios do desafio](#2-requisitos-obrigatorios)
+* [2. Requisitos obrigatórios do desafio](#2-requisitos-obrigatórios-do-desafio)
 * [3. Tecnologias utilizadas](#3-tecnologias-utilizadas)
-* [4. Instalação da aplicação](#4-instalacao-da-aplicação)
+* [4. Instalação da aplicação](#4-instalação-da-aplicação)
 * [5. API Endpoints](#5-api-endpoints)
 * [6. Autoras](#6-autoras)
 * [7. Contato](#7-contato)
