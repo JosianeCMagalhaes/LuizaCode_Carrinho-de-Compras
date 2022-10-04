@@ -116,4 +116,5 @@ Projeto desenvolvido por: **Josiane Magalhães, Aline Marques, Nathália Rodrigu
 <!--links úteis
 FastAPI https://fastapi.tiangolo.com/
 Python https://www.python.org/
-MongoDB https://www.mongodb.com/docs/-->
+MongoDB https://www.mongodb.com/docs/
+https://www.alura.com.br/artigos/como-criar-apis-python-usando-fastapi-->
