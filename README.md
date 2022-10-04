@@ -111,3 +111,7 @@ Projeto desenvolvido por: **Josiane Magalhães, Aline Marques, Nathália Rodrigu
 - [Nathália Rodrigues](https://www.linkedin.com/in/naaahrodrigues/)
 - [Simone Lima](https://www.linkedin.com/in/simone-lorenzini-lima-financeiro/)
 - [Vanessa Lima](https://www.linkedin.com/in/vanessacristinadelima/)
+
+
+<!--links úteis
+FastAPI https://fastapi.tiangolo.com/-->
