@@ -119,3 +119,12 @@ Python https://www.python.org/
 MongoDB https://www.mongodb.com/docs/
 https://www.alura.com.br/artigos/como-criar-apis-python-usando-fastapi
 https://www.magazineluiza.com.br/mercado/l/me/-->
+
+<!--
+● Montar um arquivo README.md detalhando o projeto com informações tais como:
+  ○ Tecnologia utilizada.
+  ○ Bibliotecas do Python que estão no projeto.
+  ○ Membros da equipe.
+  ○ Como montar o ambiente para executar a aplicação.
+  ○ Detalhes do desenvolvimento do trabalho, informando do que foi solicitado o que foi feito (o que não foi feito) e os extras que foram feitos.
+  ○ Informações extras sobre o trabalho.-->
