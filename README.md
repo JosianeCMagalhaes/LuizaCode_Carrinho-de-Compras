@@ -114,4 +114,6 @@ Projeto desenvolvido por: **Josiane Magalhães, Aline Marques, Nathália Rodrigu
 
 
 <!--links úteis
-FastAPI https://fastapi.tiangolo.com/-->
+FastAPI https://fastapi.tiangolo.com/
+Python https://www.python.org/
+MongoDB https://www.mongodb.com/docs/-->
