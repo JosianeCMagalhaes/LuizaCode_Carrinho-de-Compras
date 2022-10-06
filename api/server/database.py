@@ -3,7 +3,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 
 class DataBase:
     client: AsyncIOMotorClient = None
-    database_uri = environ.get("DATABASE_URI")
+    database_uri = "mongodb+srv://root:root@luizacode.v5zjjfw.mongodb.net/test"
     users_collection = None
     address_collection = None
     product_collection = None
@@ -25,7 +25,9 @@ async def connect_db():
     db.address_collection = db.client.shopping_cart.address
     db.product_collection = db.client.shopping_cart.products
     db.order_collection = db.client.shopping_cart.orders
-    db.order_items_collection = db.client.shopping_cart.orders_items
+    db.order_items_collection = db.client.shopping_cart.order_items
+
+    print('Conectado ao banco de dados')
 
 async def disconnect_db():
     db.client.close()
