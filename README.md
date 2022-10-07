@@ -65,6 +65,19 @@ Para o desenvolvimento dessa aplicação foi utilizado o framework FastAPI para 
 Para instalação é necessário ter o Python e o FastAPI instalados na máquina.
 <!--Adicionar os passos para instalação, referência: https://www.alura.com.br/artigos/como-criar-apis-python-usando-fastapi-->
 
+* Create venv
+    ```
+    virtualenv venv --python=3.10
+    source venv/bin/activate
+    ``` 
+* Install requirements
+  ```
+  pip install -r requirements.txt
+  ```
+* Run
+  ```
+    uvicorn main:app --reload
+  ```
 ## 5. API Endpoints
 <!--Adicionar os end points solicitados no projeto-->
   
