@@ -11,7 +11,7 @@ router = APIRouter(prefix='/usuarios')
 # cadastro de usuário
 
 @router.post('/cadastro', response_model= UserSchema)
-async def register(user: UserSchema):
+async def createUser(user: UserSchema):
     valid_email = await check_email(user.email)
 
     if(valid_email):
@@ -26,8 +26,8 @@ async def register(user: UserSchema):
         new_user = await create_user(user)
 
         return JSONResponse(
-            status_code=status.HTTP_200_OK, 
-            content= new_user
+            status_code=status.HTTP_201_CREATED, 
+            content= {'Usuário': new_user}
         )
 
     return JSONResponse(
@@ -36,7 +36,7 @@ async def register(user: UserSchema):
     )
 
 
-# buscar usuário pelo email
+# buscar usuário pelo email, o email deve ser passado na query
 
 @router.get('/email', response_model= UserSchema)
 async def user(email: str):

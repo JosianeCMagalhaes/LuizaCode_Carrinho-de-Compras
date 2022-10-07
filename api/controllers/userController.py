@@ -1,7 +1,10 @@
+import logging
 from api.schemas.user import UserSchema
 from api.utils.converter import converter_object_id, fix_id
 
 from api.server.database import db
+
+logger = logging.getLogger(__name__)
 
 async def create_user(user: UserSchema):
     try: 
@@ -12,7 +15,7 @@ async def create_user(user: UserSchema):
             return user
 
     except Exception as error: 
-        return f'create_user.error: {error}'
+        logger.exception(f'create_user.error: {error}')
 
 async def get_user_by_email(email):
   

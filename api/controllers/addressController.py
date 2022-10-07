@@ -1,10 +1,13 @@
-from audioop import add
+import logging
 from fastapi.encoders import jsonable_encoder
 from api.schemas.address import Address, AddressSchema
 from api.schemas.user import UserSchema
 from api.utils.converter import converter_object_id, fix_id, convert_dict_address
 
 from api.server.database import db
+
+logger = logging.getLogger(__name__)
+
 
 async def create_address(user, address):
    
@@ -22,7 +25,7 @@ async def create_address(user, address):
             return address
     
     except Exception as error: 
-        return f'create_address.error: {error}'
+        logger.exception(f'create_address.error: {error}')
 
 
 
@@ -63,6 +66,6 @@ async def add_address_user(user_email, address: Address):
             return address
 
     except Exception as error: 
-        print(f'add_address_user.error: {error}')
+        logger.exception(f'add_address_user.error: {error}')
 
 

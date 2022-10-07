@@ -29,22 +29,23 @@ async def create(address: AddressSchema):
             add_address = await add_address_user(user['email'], address.address)
 
             return JSONResponse(
-                status_code=status.HTTP_200_OK, 
-                content= add_address
+                status_code=status.HTTP_202_ACCEPTED, 
+                content= {'Endereços': add_address}
             )
         else:
             new_address = await create_address(user, address.address)
 
             return JSONResponse(
-                    status_code=status.HTTP_200_OK, 
-                    content= new_address
+                    status_code=status.HTTP_201_CREATED, 
+                    content= {'Endereços': new_address}
                 )
     
     return JSONResponse(
-        status_code=status.HTTP_400_BAD_REQUEST,
-        content='Usuário não encontrado'
+        status_code=status.HTTP_404_NOT_FOUND,
+        content={'error': 'Usuário não encontrado'}
     )
 
+# busca endereços pelo usuário com base no email que deve ser passado na query
 
 @router.get('', response_model=Address)
 async def get_address(email: str):
@@ -60,7 +61,7 @@ async def get_address(email: str):
 
     return JSONResponse(
             status_code=status.HTTP_404_NOT_FOUND, 
-            content= {'Usuário não encontrado'}
+            content={'error': 'Usuário não encontrado'}
         )
 
 
