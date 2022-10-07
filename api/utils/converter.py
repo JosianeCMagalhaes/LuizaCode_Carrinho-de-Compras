@@ -15,3 +15,16 @@ def fix_id(data):
         return data
     raise ValueError(f'_id não encontrado')
 
+async def convert_dict_address(list):
+    new_dict = {}
+    for i in range(len(list)):
+       new_dict = {
+        "street": list[i].street,
+        "cep,": list[i].cep,
+        "district,": list[i].district,
+        "city": list[i].city,
+        "state": list[i].state,
+        "is_delivery": list[i].is_delivery,
+       }
+
+    return new_dict

@@ -1,8 +1,5 @@
-from importlib.resources import contents
-from json import JSONEncoder
-from fastapi import status, HTTPException
 from api.schemas.user import UserSchema
-from api.utils.converterId import converter_object_id, fix_id
+from api.utils.converter import converter_object_id, fix_id
 
 from api.server.database import db
 
@@ -23,9 +20,8 @@ async def get_user_by_email(email):
     
     if(user):
         return fix_id(user)
-    
-   
 
+    
 async def get_user(user_id):
     
     user = await db.users_collection.find_one({'_id': converter_object_id(user_id)})
