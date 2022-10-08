@@ -1,8 +1,9 @@
 import logging
+from fastapi import HTTPException, status
 from fastapi.encoders import jsonable_encoder
-from api.schemas.address import Address, AddressSchema
-from api.schemas.user import UserSchema
-from api.utils.converter import converter_object_id, fix_id, convert_dict_address
+
+from api.schemas.address import Address
+from api.middlewares.converter import converter_object_id, fix_id, convert_dict_address
 
 from api.server.database import db
 
@@ -24,6 +25,7 @@ async def create_address(user, address):
     
     except Exception as error: 
         logging.exception(f'create_address.error: {error}')
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -65,5 +67,5 @@ async def add_address_user(user_email, address: Address):
 
     except Exception as error: 
         logging.exception(f'add_address_user.error: {error}')
-
+        raise HTTPException(status_code=status.HTTP_304_NOT_MODIFIED)
 

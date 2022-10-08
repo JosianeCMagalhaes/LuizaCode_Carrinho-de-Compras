@@ -1,7 +1,8 @@
 import logging
 from uuid import uuid4
+from fastapi import HTTPException, status
 from api.schemas.product import ProductSchema, ProductBaseSchema, ProductCodeSchema
-from api.utils.converter import converter_object_id, fix_id
+from api.middlewares.converter import converter_object_id, fix_id
 
 from api.server.database import db
 
@@ -22,6 +23,7 @@ async def create_product(product: ProductBaseSchema):
 
     except Exception as error:
         logging.exception(f'create_product.error: {error}')
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST)
 
 
 async def get_product(product_id):

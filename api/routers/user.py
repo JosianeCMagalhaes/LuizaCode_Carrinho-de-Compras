@@ -3,7 +3,7 @@ from starlette.responses import JSONResponse
 
 from api.controllers.userController import create_user, get_user_by_email
 from api.schemas.user import UserSchema
-from api.utils.validators import check_email
+from api.middlewares.validators import check_email
 
 
 router = APIRouter(prefix='/usuarios')

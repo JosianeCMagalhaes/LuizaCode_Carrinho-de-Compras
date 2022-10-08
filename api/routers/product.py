@@ -3,7 +3,7 @@ from starlette.responses import JSONResponse
 
 from api.controllers.productController import create_product
 from api.schemas.product import ProductSchema, ProductBaseSchema, ProductCodeSchema
-from api.utils.validators import check_product_price_stock
+from api.middlewares.validators import check_product_price_stock
 
 
 router = APIRouter(prefix='/produtos')
