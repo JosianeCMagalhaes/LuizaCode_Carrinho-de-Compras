@@ -1,5 +1,5 @@
 
-from fastapi import APIRouter, status
+from fastapi import APIRouter, status, HTTPException
 from starlette.responses import JSONResponse
 
 from api.controllers.addressController import create_address, get_address_by_email, add_address_user
@@ -13,7 +13,7 @@ router = APIRouter(prefix='/enderecos')
 
 
 @router.post('/cadastro', response_model=AddressSchema)
-async def create(address: AddressSchema):
+async def create_address_by_user(address: AddressSchema):
 
     # verifica se o usuário existe p/ cadastrar
     user = await get_user_by_email(address.user.email)
@@ -40,15 +40,15 @@ async def create(address: AddressSchema):
                     content= {'Endereços': new_address}
                 )
     
-    return JSONResponse(
+    raise HTTPException(
         status_code=status.HTTP_404_NOT_FOUND,
-        content={'error': 'Usuário não encontrado'}
+        detail={'error': 'Usuário não encontrado'}
     )
 
 # busca endereços pelo usuário com base no email que deve ser passado na query
 
 @router.get('', response_model=Address)
-async def get_address(email: str):
+async def get_address_by_user_email(email: str):
 
     user = await get_user_by_email(email)
     
@@ -59,10 +59,10 @@ async def get_address(email: str):
                 content={'Endereços': address['address']}
             )
 
-    return JSONResponse(
-            status_code=status.HTTP_404_NOT_FOUND, 
-            content={'error': 'Usuário não encontrado'}
-        )
+    raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND, 
+        detail={'error': 'Usuário não encontrado'}
+    )
 
 
 
