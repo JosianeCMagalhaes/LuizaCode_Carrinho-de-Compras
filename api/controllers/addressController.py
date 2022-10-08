@@ -1,10 +1,12 @@
-from audioop import add
+import logging
+from fastapi import HTTPException, status
 from fastapi.encoders import jsonable_encoder
-from api.schemas.address import Address, AddressSchema
-from api.schemas.user import UserSchema
-from api.utils.converter import converter_object_id, fix_id, convert_dict_address
+
+from api.schemas.address import Address
+from api.middlewares.converter import converter_object_id, fix_id, convert_dict_address
 
 from api.server.database import db
+
 
 async def create_address(user, address):
    
@@ -22,8 +24,8 @@ async def create_address(user, address):
             return address
     
     except Exception as error: 
-        return f'create_address.error: {error}'
-
+        logging.exception(f'create_address.error: {error}')
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST)
 
 
 async def get_address(address_id):
@@ -63,6 +65,6 @@ async def add_address_user(user_email, address: Address):
             return address
 
     except Exception as error: 
-        print(f'add_address_user.error: {error}')
-
+        logging.exception(f'add_address_user.error: {error}')
+        raise HTTPException(status_code=status.HTTP_304_NOT_MODIFIED)
 
