@@ -12,11 +12,7 @@ from api.utils.descriptions import DESCRIPTION_CREATE_ADDRESS
 router = APIRouter(prefix='/enderecos')
 
 
-@router.post(
-    '/cadastro', 
-    description=DESCRIPTION_CREATE_ADDRESS,
-    response_model=AddressSchema
-)
+@router.post('/cadastro', description=DESCRIPTION_CREATE_ADDRESS, response_model=AddressSchema)
 async def create_address_by_user(address: AddressSchema):
 
     # verifica se o usuário existe p/ cadastrar

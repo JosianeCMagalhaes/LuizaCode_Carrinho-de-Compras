@@ -9,17 +9,11 @@ from api.utils.descriptions import DESCRIPTION_CREATE_USER
 
 router = APIRouter(prefix='/usuarios')
 
-
-
 # cadastro de usuário
 
-@router.post(
-    '/cadastro', 
-    description=DESCRIPTION_CREATE_USER,
-    response_model= UserSchema
-    
-)
+@router.post('/cadastro', description=DESCRIPTION_CREATE_USER,response_model= UserSchema)
 async def createUser(user: UserSchema):
+
     valid_email = await check_email(user.email)
 
     if(valid_email):

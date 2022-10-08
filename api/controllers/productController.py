@@ -13,6 +13,7 @@ async def create_product(product: ProductBaseSchema):
        
         new_product = product.dict()
        
+        # gera o código automaticamente
         new_product['code'] = str(uuid4().int)[:9]
    
         product = await db.product_collection.insert_one(new_product)
@@ -30,4 +31,10 @@ async def get_product(product_id):
     product = await db.product_collection.find_one({'_id': converter_object_id(product_id)})
 
     if product:
+        return fix_id(product)
+
+async def get_product_by_code(product_code: ProductCodeSchema):
+    product = await db.product_collection.find_one({'code': product_code})
+
+    if product: 
         return fix_id(product)
