@@ -6,13 +6,17 @@ from api.controllers.addressController import create_address, get_address_by_ema
 from api.schemas.user import UserSchema
 from api.controllers.userController import get_user_by_email
 from api.schemas.address import Address, AddressSchema
-
+from api.utils.descriptions import DESCRIPTION_CREATE_ADDRESS
 
 
 router = APIRouter(prefix='/enderecos')
 
 
-@router.post('/cadastro', response_model=AddressSchema)
+@router.post(
+    '/cadastro', 
+    description=DESCRIPTION_CREATE_ADDRESS,
+    response_model=AddressSchema
+)
 async def create_address_by_user(address: AddressSchema):
 
     # verifica se o usuário existe p/ cadastrar

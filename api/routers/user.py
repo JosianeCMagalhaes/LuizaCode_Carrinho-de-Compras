@@ -4,6 +4,7 @@ from starlette.responses import JSONResponse
 from api.controllers.userController import create_user, get_user_by_email
 from api.schemas.user import UserSchema
 from api.middlewares.validators import check_email
+from api.utils.descriptions import DESCRIPTION_CREATE_USER
 
 
 router = APIRouter(prefix='/usuarios')
@@ -12,7 +13,12 @@ router = APIRouter(prefix='/usuarios')
 
 # cadastro de usuário
 
-@router.post('/cadastro', response_model= UserSchema)
+@router.post(
+    '/cadastro', 
+    description=DESCRIPTION_CREATE_USER,
+    response_model= UserSchema
+    
+)
 async def createUser(user: UserSchema):
     valid_email = await check_email(user.email)
 

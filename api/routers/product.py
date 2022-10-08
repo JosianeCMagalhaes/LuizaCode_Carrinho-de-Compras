@@ -4,12 +4,17 @@ from starlette.responses import JSONResponse
 from api.controllers.productController import create_product
 from api.schemas.product import ProductSchema, ProductBaseSchema, ProductCodeSchema
 from api.middlewares.validators import check_product_price_stock
+from api.utils.descriptions import DESCRIPTION_CREATE_PRODUCT
 
 
 router = APIRouter(prefix='/produtos')
 
 # cadastro de produto
-@router.post('/cadastro', response_model=ProductSchema)
+@router.post(
+    '/cadastro', 
+    description=DESCRIPTION_CREATE_PRODUCT,
+    response_model=ProductSchema
+)
 async def createProduct(product: ProductBaseSchema):
     valid_price_stock = await check_product_price_stock(product)
    

@@ -28,7 +28,6 @@ async def create_address(user, address):
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST)
 
 
-
 async def get_address(address_id):
    
     address = await db.address_collection.find_one({'_id': converter_object_id(address_id)})
