@@ -1,6 +1,4 @@
-from fastapi import FastAPI, HTTPException
-from fastapi.exceptions import RequestValidationError
-from fastapi.responses import PlainTextResponse
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.server.database import connect_db, disconnect_db
@@ -10,10 +8,6 @@ app = FastAPI()
 
 app.add_event_handler('startup', connect_db)
 app.add_event_handler('shutdown', disconnect_db)
-
-@app.exception_handler(RequestValidationError)
-async def validation_exception_handler(request, exc):
-    return PlainTextResponse(str(exc), status_code=400)
 
 app.add_middleware( 
         CORSMiddleware,
