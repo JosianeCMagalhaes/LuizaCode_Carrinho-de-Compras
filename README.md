@@ -45,7 +45,7 @@
 
 ## 1. Sobre
 <!--Adicionar descrição do projeto-->
-A aplicação foi desenvolvida visando atender os requisitos do projeto final do Luiza Code, com [FastAPI](https://fastapi.tiangolo.com/), [MongoDB](https://www.mongodb.com/) e [Python](https://www.python.org/).
+A aplicação foi desenvolvida visando atender os requisitos do projeto final do Luiza Code, com FastAPI, MongoDB e Python.
 <br />
   
 ### 2. Requisitos obrigatórios do desafio
