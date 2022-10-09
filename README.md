@@ -45,7 +45,9 @@
 
 ## 1. Sobre
 <!--Adicionar descrição do projeto-->
-A aplicação foi desenvolvida visando atender os requisitos do projeto final do Luiza Code, com FastAPI, MongoDB e Python.
+Uma API assíncrona com FastAPI e MongoDB, usando o pacote Motor para interagir com o MongoDB de forma assíncrona com deploy no Heroku. A aplicação foi desenvolvida visando atender os requisitos do projeto final do Luiza Code, com FastAPI, MongoDB e Python.
+  
+<!--Implementado com testes com TestClient e CI/CD no GitHub Actions com deploy no Heroku.-->
 <br />
   
 ### 2. Requisitos obrigatórios do desafio
