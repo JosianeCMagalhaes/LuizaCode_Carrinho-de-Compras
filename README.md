@@ -37,7 +37,7 @@
 * [2. Requisitos obrigatórios do desafio](#2-requisitos-obrigatórios-do-desafio)
 * [3. Tecnologias utilizadas](#3-tecnologias-utilizadas)
 * [4. Instalação da aplicação](#4-instalação-da-aplicação)
-* [5. API Endpoints](#5-api-endpoints)
+* [5. Bibliotecas Python](#5-bibliotecas-python)
 * [6. Autoras](#6-autoras)
 * [7. Contato](#7-contato)
 
@@ -58,7 +58,9 @@ A aplicação foi desenvolvida visando atender os requisitos do projeto final do
 ## 3. Tecnologias utilizadas
 <!--Adicionar tecnologias utilizadas-->
 Para o desenvolvimento dessa aplicação foi utilizado o framework FastAPI para a criação da API, juntamente com o banco de dados MongoDB... 
-
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [MongoDB](https://www.mongodb.com/)
+- [Python](https://www.python.org/)
 
 ## 4. Instalação da aplicação
 
@@ -86,8 +88,26 @@ Para instalação é necessário ter o Python e o FastAPI instalados na máquina
     ```
     uvicorn main:app --reload
     ```
+## 5. Bibliotecas Python
+   ```
+   pip install pydantic
+   ```
+  
+## 6. Documentação Interativa da API
 
-## 5. API Endpoints
+Documentação automática interativa da API (fornecida por [Swagger UI](https://github.com/swagger-api/swagger-ui)):
+   ```
+   http://127.0.0.1:8000/docs
+   ```
+  <!--print da documentação-->
+  
+## 7. Documentação Alternativa da API
+Documentação automática alternativa (fornecida por [ReDoc](https://github.com/Redocly/redoc)):
+   ```
+   http://127.0.0.1:8000/redoc
+   ```
+  <!--print da documentação-->
+<!--## 5. API Endpoints-->
 <!--Adicionar os end points solicitados no projeto-->
   
 <!--exemplos
