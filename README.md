@@ -79,13 +79,14 @@ Para instalação é necessário ter o Python e o FastAPI instalados na máquina
     $ .\venv\Scripts\activate
     ```
 * Install requirements
-  ```
-  pip install -r requirements.txt
-  ```
+    ```
+    pip install -r requirements.txt
+    ```
 * Run
-  ```
+    ```
     uvicorn main:app --reload
-  ```
+    ```
+
 ## 5. API Endpoints
 <!--Adicionar os end points solicitados no projeto-->
   
