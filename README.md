@@ -69,7 +69,15 @@ Para instalação é necessário ter o Python e o FastAPI instalados na máquina
     ```
     virtualenv venv --python=3.10
     source venv/bin/activate
-    ``` 
+    ```
+* Linux
+    ```
+    $ source venv/bin/activate
+    ```
+* Windows
+    ```
+    $ .\venv\Scripts\activate
+    ```
 * Install requirements
   ```
   pip install -r requirements.txt
