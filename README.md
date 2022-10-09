@@ -70,15 +70,16 @@ Para instalação é necessário ter o Python e o FastAPI instalados na máquina
 * Create venv
     ```
     virtualenv venv --python=3.10
-    source venv/bin/activate
     ```
-* Linux
+* Ativando o ambiente virtual
+   
+    Para ativar o ambiente virtual no Linux:
     ```
     $ source venv/bin/activate
     ```
-* Windows
+    Para ativar o ambiente virtual no Windows:
     ```
-    $ .\venv\Scripts\activate
+    $ venv\bin\activate
     ```
 * Install requirements
     ```
@@ -88,10 +89,10 @@ Para instalação é necessário ter o Python e o FastAPI instalados na máquina
     ```
     uvicorn main:app --reload
     ```
-## 5. Bibliotecas Python
-   ```
-   pip install pydantic
-   ```
+## 5. Bibliotecas instaladas
+- [fastapi](https://fastapi.tiangolo.com/),
+- [uvicorn](https://www.uvicorn.org/),
+- [motor](https://motor.readthedocs.io/en/stable/).
   
 ## 6. Documentação Interativa da API
 
