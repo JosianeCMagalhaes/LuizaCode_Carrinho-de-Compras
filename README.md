@@ -104,8 +104,8 @@ Para instalação é necessário ter o Python e o FastAPI instalados na máquina
     ```
 * Como testar
     ```
-    Abra os arquivos de teste de casos e teste as rotas
-    Dica: você pode instalar a extensão "Rest Client" no Visual Studio Code para executar testes diretamente nos arquivos       *.http
+  Abra os arquivos de teste de casos e teste as rotas
+  Dica: você pode instalar a extensão "Rest Client" no Visual Studio Code para executar testes diretamente nos arquivos *.http
     ```
 
 ## 5. Bibliotecas instaladas
@@ -128,8 +128,10 @@ Documentação automática alternativa (fornecida por [ReDoc](https://github.com
    ```
   <!--print da documentação-->
   
-## 8. Routes 
-url: http://localhost:8000/docs
+## 8. Documentação do [Heroku](https://www.heroku.com/about):
+```
+```
+
 
 <!--## 5. API Endpoints-->
 <!--Adicionar os end points solicitados no projeto-->
@@ -165,11 +167,11 @@ url: http://localhost:8000/docs
 <!--Adicionar imagem da documentação da API-opcional-->
 </p>
 
-## 9. Autoras
+## 8. Autoras
 
 Projeto desenvolvido por: **Josiane Magalhães, Aline Marques, Nathália Rodrigues, Simone Lima, Vanessa Lima** 👋
 
-## 10. Contato
+## 9. Contato
 
 **Linkedin**: 
 - [Josiane Magalhães](https://www.linkedin.com/in/josianemagalhaes/)
