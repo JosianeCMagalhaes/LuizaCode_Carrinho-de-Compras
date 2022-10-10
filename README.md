@@ -50,7 +50,7 @@ Uma API assíncrona com FastAPI e MongoDB, usando o pacote Motor para interagir 
 <!--Implementado com testes com TestClient e CI/CD no GitHub Actions com deploy no Heroku.-->
 <br />
   
-### 2. Requisitos obrigatórios do desafio
+## 2. Requisitos obrigatórios do desafio
 <!--Adicionar requisitos obrigatórios do porojeto-->
   -  
   - 
@@ -71,7 +71,7 @@ Para instalação é necessário ter o Python e o FastAPI instalados na máquina
 
 * Create venv
     ```
-    virtualenv venv --python=3.10
+    $ python -m venv venv
     ```
 * Ativando o ambiente virtual
    
@@ -81,16 +81,33 @@ Para instalação é necessário ter o Python e o FastAPI instalados na máquina
     ```
     Para ativar o ambiente virtual no Windows:
     ```
-    $ venv\bin\activate
+    $ .\venv\Scripts\activate
     ```
+  Após o comando inserido, deve aparecer o nome do ambiente virtual
 * Install requirements
     ```
     pip install -r requirements.txt
     ```
+* Connect mongodb
+    ```
+
+    $ create a .env file with your mongoDB connect string according to .env.example file 
+    ```
+
+    | name_env | value |
+    |------------|------------|
+    |DATABASE_URI|connection string Atlas|
+     
 * Run
     ```
     uvicorn main:app --reload
     ```
+* Como testar
+    ```
+    Abra os arquivos de teste de casos e teste as rotas
+    Dica: você pode instalar a extensão "Rest Client" no Visual Studio Code para executar testes diretamente nos arquivos       *.http
+    ```
+
 ## 5. Bibliotecas instaladas
 - [fastapi](https://fastapi.tiangolo.com/),
 - [uvicorn](https://www.uvicorn.org/),
@@ -110,6 +127,10 @@ Documentação automática alternativa (fornecida por [ReDoc](https://github.com
    http://127.0.0.1:8000/redoc
    ```
   <!--print da documentação-->
+  
+## 8. Routes 
+url: http://localhost:8000/docs
+
 <!--## 5. API Endpoints-->
 <!--Adicionar os end points solicitados no projeto-->
   
@@ -144,11 +165,11 @@ Documentação automática alternativa (fornecida por [ReDoc](https://github.com
 <!--Adicionar imagem da documentação da API-opcional-->
 </p>
 
-## 6. Autoras
+## 9. Autoras
 
 Projeto desenvolvido por: **Josiane Magalhães, Aline Marques, Nathália Rodrigues, Simone Lima, Vanessa Lima** 👋
 
-## 7. Contato
+## 10. Contato
 
 **Linkedin**: 
 - [Josiane Magalhães](https://www.linkedin.com/in/josianemagalhaes/)
