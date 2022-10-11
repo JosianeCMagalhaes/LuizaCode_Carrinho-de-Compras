@@ -1,5 +1,3 @@
-from ast import List
-from math import prod
 from fastapi import APIRouter, status, HTTPException
 from starlette.responses import JSONResponse
 
