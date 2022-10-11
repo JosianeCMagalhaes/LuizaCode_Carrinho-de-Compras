@@ -1,10 +1,11 @@
 import logging
 from fastapi import HTTPException, status
 from fastapi.encoders import jsonable_encoder
+from api.middlewares.converters import object_id_string, fix_id
 
 
 from api.schemas.address import Address
-from api.middlewares.converter import converter_object_id, fix_id, convert_dict_address
+
 
 from api.server.database import db
 
@@ -31,7 +32,7 @@ async def create_address(user, address):
 
 async def get_address(address_id):
    
-    address = await db.address_collection.find_one({'_id': converter_object_id(address_id)})
+    address = await db.address_collection.find_one({'_id': object_id_string(address_id)})
    
     if(address):
         return fix_id(address)
@@ -47,7 +48,7 @@ async def get_address_by_email(user_email):
 async def add_address_user(user_email, address: Address):
     try: 
         
-        dict_address = await convert_dict_address(address)
+        dict_address = await dict_address(address)
                
         address_data = dict_address
         address_data = {k: v for k, v in address_data.items() if v is not None}
@@ -57,7 +58,7 @@ async def add_address_user(user_email, address: Address):
         new_address['address'].append(address_data)
 
         add_address = await db.address_collection.update_one(
-            {'_id': converter_object_id(new_address['_id'])},
+            {'_id': object_id_string(new_address['_id'])},
             {'$set': new_address}
         )
         

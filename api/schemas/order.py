@@ -1,5 +1,4 @@
 
-import datetime
 from decimal import Decimal
 from typing import Optional
 from pydantic import BaseModel, Field
@@ -12,3 +11,5 @@ class OrderSchema(BaseModel):
     paid: bool = Field(default=False)
     address: AddressList
     created: str
+
+

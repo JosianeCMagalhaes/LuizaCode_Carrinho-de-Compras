@@ -1,7 +1,7 @@
 from fastapi import HTTPException, status
 import logging
 from api.schemas.user import UserSchema
-from api.middlewares.converter import converter_object_id, fix_id
+from api.middlewares.converters import object_id_string, fix_id
 
 from api.server.database import db
 
@@ -28,7 +28,7 @@ async def get_user_by_email(email):
     
 async def get_user(user_id):
     
-    user = await db.users_collection.find_one({'_id': converter_object_id(user_id)})
+    user = await db.users_collection.find_one({'_id': object_id_string(user_id)})
     
     if user:
         return fix_id(user)

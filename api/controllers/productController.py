@@ -3,7 +3,7 @@ import logging
 from uuid import uuid4
 from fastapi import HTTPException, status
 from api.schemas.product import ProductSchema, ProductBaseSchema, ProductCodeSchema, ProductUpdatedSchema
-from api.middlewares.converter import converter_object_id, fix_id
+from api.middlewares.converters import object_id_string, fix_id
 
 from api.server.database import db
 
@@ -27,7 +27,7 @@ async def create_product(product: ProductBaseSchema):
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST)
 
 async def get_product(product_id):
-    product = await db.product_collection.find_one({'_id': converter_object_id(product_id)})
+    product = await db.product_collection.find_one({'_id': object_id_string(product_id)})
 
     if product:
         return fix_id(product)
@@ -60,7 +60,7 @@ async def update_product(product_code, product_data: ProductUpdatedSchema):
         product = {k: v for k, v in product.items() if v is not None}
 
         product_db = await db.product_collection.update_one(
-            {'_id': converter_object_id(product_by_code['_id'])},
+            {'_id': object_id_string(product_by_code['_id'])},
             {'$set': product}
         )
 
@@ -77,7 +77,7 @@ async def delete_product(product_code: ProductCodeSchema):
     try: 
         product = await get_product_by_code(product_code)
 
-        product_db = await db.product_collection.delete_one({'_id': converter_object_id(product['_id'])})
+        product_db = await db.product_collection.delete_one({'_id': object_id_string(product['_id'])})
 
         if product_db.deleted_count:
             return {'status': f'Produto excluído com sucesso'}
