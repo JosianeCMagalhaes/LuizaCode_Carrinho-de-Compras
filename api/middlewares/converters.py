@@ -20,7 +20,7 @@ def fix_id(data):
     
 
 async def datetime_string():
-    date_now = datetime.now()
+    date_now = datetime.datetime.now()
     date_db = json.dumps(date_now, indent = 4, sort_keys = True, default = str)
 
     return date_db

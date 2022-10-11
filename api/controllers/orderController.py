@@ -74,13 +74,11 @@ async def get_orders_and_products(user_id):
                 "products": products
             }
             return order_open
-            
+
     except Exception as error: 
         logging.exception(f'get_orders_and_products.error: {error}')
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST)
     
-   
-
 
 async def update_order_price(order: OrderSchema, cart: CartItemsSchema, product: ProductSchema):
 
@@ -103,6 +101,16 @@ async def update_order_price(order: OrderSchema, cart: CartItemsSchema, product:
         logging.exception(f'update_order_price.error: {error}')
         raise HTTPException(status_code=status.HTTP_304_NOT_MODIFIED)
 
+async def delete_order(order_id):
+    try: 
+        order_db = await db.order_collection.delete_one({'_id': object_id_string(order_id)})
+
+        if order_db.deleted_count:
+            return {'status': f'Pedido excluído com sucesso'}
+
+    except Exception as error:
+        logging.exception(f'delete_order.error: {error}')
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST)
 
 
 async def transform_cart_to_order(user: UserSchema, product: ProductSchema, cart: CartItemsSchema):
