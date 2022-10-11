@@ -41,8 +41,9 @@ async def get_product_by_code(product_code: ProductCodeSchema):
 async def get_all_products():
     try:
 
-        products_db = await db.product_db.find()
-        products = list(map(fix_id, products_db))
+        products_db = db.product_collection.find()
+        products = await products_db.to_list(length=10)
+        list(map(fix_id, products))
         return products
 
     except Exception as error:
@@ -76,12 +77,10 @@ async def delete_product(product_code: ProductCodeSchema):
     try: 
         product = await get_product_by_code(product_code)
 
-        product_db = db.product_collection.delete_one({'_id': converter_object_id(product['_id'])})
+        product_db = await db.product_collection.delete_one({'_id': converter_object_id(product['_id'])})
 
         if product_db.deleted_count:
             return {'status': f'Produto excluído com sucesso'}
-
-       
 
     except Exception as error:
         logging.exception(f'delete_product.error: {error}')

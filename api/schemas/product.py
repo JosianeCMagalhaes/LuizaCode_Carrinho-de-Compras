@@ -26,3 +26,11 @@ class ProductUpdatedSchema(BaseModel):
     price: Optional[float]
     category: Optional[str]
     quant_stock: Optional[int]
+
+
+class ProductList(ProductSchema):
+    _id: str
+    code: str
+    
+    class Config:
+        orm_mode = True

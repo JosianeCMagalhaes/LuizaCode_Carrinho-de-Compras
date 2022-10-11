@@ -1,9 +1,10 @@
+from ast import List
 from math import prod
 from fastapi import APIRouter, status, HTTPException
 from starlette.responses import JSONResponse
 
-from api.controllers.productController import create_product, delete_product, get_product_by_code, update_product
-from api.schemas.product import ProductSchema, ProductBaseSchema, ProductCodeSchema, ProductUpdatedSchema
+from api.controllers.productController import create_product, delete_product, get_all_products, get_product_by_code, update_product
+from api.schemas.product import ProductList, ProductSchema, ProductBaseSchema, ProductCodeSchema, ProductUpdatedSchema
 from api.middlewares.validators import check_product_price_stock
 from api.utils.descriptions import DESCRIPTION_CREATE_PRODUCT
 
@@ -76,12 +77,29 @@ async def delete_product_by_code(code: str):
         delete_prod = await delete_product(code)
 
         return JSONResponse(
-            status_code=status.HTTP_204_NO_CONTENT,
-            content={'mensagem': delete_prod}
+            status_code=status.HTTP_200_OK,
+            content={'Mensagem': 'Produto excluído com sucesso' }
         ) 
 
     raise HTTPException(
         status_code=status.HTTP_400_BAD_REQUEST,
         detail={'error': 'Produto não encontrado'}
     )
+
+
+@router.get('/', response_model=ProductList)
+async def get_products():
+    products = await get_all_products()
+    
+    if products:
+
+        return JSONResponse(
+            status_code=status.HTTP_200_OK,
+            content={'Produtos': products }
+        ) 
+
+    raise HTTPException(
+        status_code=status.HTTP_400_BAD_REQUEST
+    )
+
 
