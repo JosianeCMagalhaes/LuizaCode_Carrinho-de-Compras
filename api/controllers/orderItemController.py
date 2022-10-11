@@ -1,16 +1,11 @@
 import logging
 from fastapi import HTTPException, status
-from api.middlewares.converters import datetime_string, object_id_string, fix_id
+from api.middlewares.converters import fix_id
 
 from api.schemas.order import OrderSchema
 from api.schemas.product import ProductSchema
 
-from api.controllers.addressController import get_address_to_delivery
-from api.controllers.productController import get_product, get_product_by_code
-from api.controllers.userController import get_user_by_email
-
 from api.server.database import db
-
 
 async def create_order_item(order: OrderSchema, product: ProductSchema):
     

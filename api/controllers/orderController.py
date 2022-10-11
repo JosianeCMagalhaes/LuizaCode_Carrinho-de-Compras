@@ -15,25 +15,28 @@ from api.server.database import db
 async def create_cart(user: UserSchema, product: ProductSchema, cart: CartItemsSchema):
 
     try: 
-        # validação se já tem um carrinho aberto
-        order_db = await get_order_open(user['_id'])
-        print(order_db)
+        # validação se tem a quantidade pedida no estoque
+        if product['quant_stock'] >= cart.product.quantity:
 
-        if order_db:
-        # atualiza o pedido com o novo produto
-            order = await update_order_price(order_db, cart, product)
-            order_item = await create_order_item(order_db, product)
+            # validação se já tem um carrinho aberto
+            order_db = await get_order_open(user['_id'])
+            
+            if order_db:
+            # atualiza o valor do pedido com o novo produto
+                order = await update_order_price(order_db, cart, product)
+                order_item = await create_order_item(order_db, product)
+                return order
 
-            return order
+            cart_to_order = await transform_cart_to_order(user, product, cart)
+            cart_db = await db.order_collection.insert_one(cart_to_order)
 
-        cart_to_order = await transform_cart_to_order(user, product, cart)
-        cart_db = await db.order_collection.insert_one(cart_to_order)
+            if cart_db.inserted_id:
+                order = await get_order_open(user['_id'])
+                order_item = await create_order_item(order, product)
+                return order
 
-        if cart_db.inserted_id:
-            order = await get_order_open(user['_id'])
-            order_item = await create_order_item(order, product)
-        return order
-    
+        return { 'error': 'Quantidade pedida maior do que o estoque no sistema'}
+        
     except Exception as error: 
         logging.exception(f'create_cart.error: {error}')
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST)

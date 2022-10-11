@@ -86,4 +86,3 @@ async def delete_product(product_code: ProductCodeSchema):
         logging.exception(f'delete_product.error: {error}')
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST)
 
-        

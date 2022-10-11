@@ -27,7 +27,7 @@ async def create_order_by_cart(cart: CartItemsSchema):
     user = await get_user_by_email(cart.user.email)
     if user:
         product = await get_product_by_code(cart.product.code)
-
+        print(product['quant_stock'])
         if product:
 
             new_cart = await create_cart(user, product, cart)

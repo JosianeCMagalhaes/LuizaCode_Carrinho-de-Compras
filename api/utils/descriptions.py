@@ -64,10 +64,7 @@ DESCRIPTION_CREATE_CART = """
         - `quantity`: Deve ser a quantidade do produto no formato `int`
 
 Se o carrinho for criado corretamente a API retornará sucesso
-(código HTTP 201) e no corpo da resposta um registro com o campo
+(código HTTP 200) e no corpo da resposta um registro com o campo
 `_id`, que é o id da novo carrinho em nosso banco de dados.
-
-Caso o usuário já tenha algum carrinho cadastrado e em aberto, o novo produto será adicionado a lista de items que 
-já consta no sistema. Se for adicionado corretamente, a API retornará sucesso (código HTTP 202).
 
 """
