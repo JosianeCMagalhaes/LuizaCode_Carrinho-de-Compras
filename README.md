@@ -10,6 +10,10 @@
 <h2 align="center">
   Carrinho de compras
 </h2>
+
+<h2 align="center">
+  Mercado 🛒 - Grupo 3
+</h2>
   
 <h3 align="center">
   API REST com FastAPI Framework e Python.
