@@ -22,11 +22,10 @@ async def create_address(user, address):
         
         if address.inserted_id:
             address = await get_address(address.inserted_id)
-            print(address)
             return address
     
     except Exception as error: 
-        logging.exception(f'create_address.error: {error}')
+        logging.exception(f'Wcreate_address.error: {error}')
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST)
 
 
