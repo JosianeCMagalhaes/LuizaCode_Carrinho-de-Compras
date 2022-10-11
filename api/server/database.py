@@ -3,8 +3,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 
 class DataBase:
     client: AsyncIOMotorClient = None
-    # database_uri = environ.get("DATABASE_URI")
-    database_uri = "mongodb+srv://root:root@luizacode.v5zjjfw.mongodb.net/test"
+    database_uri = environ.get("DATABASE_URI")
     users_collection = None
     address_collection = None
     product_collection = None

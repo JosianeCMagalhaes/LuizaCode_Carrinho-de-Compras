@@ -52,3 +52,19 @@ Se o produto for criado corretamente a API retornará sucesso
 `_id`, que é o id da novo produto em nosso banco de dados, e `code` 
 que é o código da nova música em nosso sistema.
 """
+
+
+DESCRIPTION_CREATE_CART = """
+    Para a criação do carrinho devem ser informados os seguintes dados:
+
+    - `user`: 
+        - `email`: Deve ter nome único e com 3 caracteres ou mais
+    - `product`: 
+        - `code`: Deve ser uma `str` com o código cadastrado no sistema
+        - `quantity`: Deve ser a quantidade do produto no formato `int`
+
+Se o carrinho for criado corretamente a API retornará sucesso
+(código HTTP 200) e no corpo da resposta um registro com o campo
+`_id`, que é o id da novo carrinho em nosso banco de dados.
+
+"""

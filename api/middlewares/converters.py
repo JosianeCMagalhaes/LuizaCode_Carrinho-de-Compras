@@ -1,9 +1,10 @@
+import datetime
+import json
 from bson import ObjectId
 from fastapi import HTTPException
 
-
 # função p/ converter o ObjectId do mongo
-def converter_object_id(id):
+def object_id_string(id):
     try:
         _id = ObjectId(id)
     except Exception:
@@ -16,10 +17,17 @@ def fix_id(data):
         data['_id'] = str(data['_id'])
         return data
     raise ValueError(f'_id não encontrado')
+    
+
+async def datetime_string():
+    date_now = datetime.datetime.now()
+    date_db = json.dumps(date_now, indent = 4, sort_keys = True, default = str)
+
+    return date_db
 
 
 # função p/ converter a lista de endereços em dicionário
-async def convert_dict_address(list):
+async def dict_address(list):
     new_dict = {}
     for i in range(len(list)):
        new_dict = {
@@ -32,3 +40,5 @@ async def convert_dict_address(list):
        }
 
     return new_dict
+
+

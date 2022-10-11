@@ -1,3 +1,4 @@
+from email.policy import default
 from typing import Optional
 from unicodedata import category
 from pydantic import BaseModel, Field
@@ -26,6 +27,10 @@ class ProductUpdatedSchema(BaseModel):
     price: Optional[float]
     category: Optional[str]
     quant_stock: Optional[int]
+
+class ProductCart(BaseModel):
+    code: str = Field(unique=True, index=True)
+    quantity: int
 
 
 class ProductList(ProductSchema):

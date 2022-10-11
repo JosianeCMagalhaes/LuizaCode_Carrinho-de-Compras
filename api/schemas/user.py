@@ -11,3 +11,6 @@ class UserSchema(BaseModel):
 
     class Config:
         orm_mode = True
+
+class UserEmail(BaseModel):
+    email: EmailStr = Field(unique=True, index=True)
