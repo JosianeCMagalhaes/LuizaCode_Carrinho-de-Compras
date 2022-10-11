@@ -1,3 +1,5 @@
+from typing import Optional
+from unicodedata import category
 from pydantic import BaseModel, Field
 
 class ProductBaseSchema(BaseModel):
@@ -16,3 +18,11 @@ class ProductCodeSchema(BaseModel):
 class ProductSchema(ProductBaseSchema, ProductCodeSchema):
     # Possui todos os campos das duas classes
     ...
+
+
+class ProductUpdatedSchema(BaseModel):
+    name: Optional[str]
+    description: Optional[str]
+    price: Optional[float]
+    category: Optional[str]
+    quant_stock: Optional[int]
