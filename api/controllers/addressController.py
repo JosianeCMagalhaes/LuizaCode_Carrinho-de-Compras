@@ -2,6 +2,7 @@ import logging
 from fastapi import HTTPException, status
 from fastapi.encoders import jsonable_encoder
 
+
 from api.schemas.address import Address
 from api.middlewares.converter import converter_object_id, fix_id, convert_dict_address
 
@@ -68,3 +69,11 @@ async def add_address_user(user_email, address: Address):
         logging.exception(f'add_address_user.error: {error}')
         raise HTTPException(status_code=status.HTTP_304_NOT_MODIFIED)
 
+async def get_address_to_delivery(user_email):
+    find_address = await get_address_by_email(user_email)
+    
+    if find_address:
+        for add in find_address["address"]:
+            if add["is_delivery"]:
+                return add
+   

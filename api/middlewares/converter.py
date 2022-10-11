@@ -1,3 +1,5 @@
+import datetime
+import json
 from bson import ObjectId
 from fastapi import HTTPException
 
@@ -16,6 +18,13 @@ def fix_id(data):
         data['_id'] = str(data['_id'])
         return data
     raise ValueError(f'_id não encontrado')
+    
+
+async def converter_datetime_string():
+    date_now = datetime.now()
+    date_db = json.dumps(date_now, indent = 4, sort_keys = True, default = str)
+
+    return date_db
 
 
 # função p/ converter a lista de endereços em dicionário
