@@ -9,10 +9,11 @@ from api.server.database import db
 
 async def create_order_item(order: OrderSchema, product: ProductSchema):
     
-    try:
+    try:        
+
         order_item_data = {
             "order": order,
-            "product": product
+            "product": [product]
         }
 
         order_item = await db.order_items_collection.insert_one(order_item_data)
@@ -31,3 +32,11 @@ async def get_order_item(order_item_id):
 
     if order_item:
         return fix_id(order_item)
+
+async def get_orders_items_by_order(order_id):
+    orders_items = db.order_items_collection.find({'order._id': order_id})
+    list_orders_items = await orders_items.to_list(length=10)
+    list(map(fix_id, list_orders_items))
+    return list_orders_items
+
+

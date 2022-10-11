@@ -1,11 +1,11 @@
 from fastapi import APIRouter, status, HTTPException
 from starlette.responses import JSONResponse
-from api.controllers.orderController import create_cart
+from api.controllers.orderController import create_cart, get_order_open, get_orders_and_products
 from api.controllers.productController import get_product_by_code
 from api.controllers.userController import get_user_by_email
 from api.schemas.cart import CartItemsSchema
 
-from api.schemas.order import OrderSchema
+from api.schemas.order import OrderSchemaOpen, OrderSchema, OrderSchemaOpen
 from api.utils.descriptions import DESCRIPTION_CREATE_CART
 
 # from api.controllers.orderController import 
@@ -46,3 +46,24 @@ async def create_order_by_cart(cart: CartItemsSchema):
             status_code=status.HTTP_400_BAD_REQUEST,
             detail={'error': 'Email inválido. Usuário não encontrado'}
     )
+
+# consulta os pedidos em aberto. O email deve ser passado no parametro
+@router.get('/carrinho', response_model=OrderSchemaOpen)
+async def search_order_open(email: str):
+
+    user = await get_user_by_email(email)
+
+    if user:
+
+        order_open = await get_orders_and_products(user['_id'])
+
+        return JSONResponse(
+                status_code=status.HTTP_200_OK, 
+                content= {'Pedido em aberto': order_open}
+        )
+
+    raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail={'error': 'Email inválido. Usuário não encontrado'}
+    )
+

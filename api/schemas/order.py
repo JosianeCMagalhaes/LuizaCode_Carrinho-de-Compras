@@ -1,9 +1,10 @@
 
 from decimal import Decimal
-from typing import Optional
+from typing import Optional, List
 from pydantic import BaseModel, Field
 from api.schemas.user import UserSchema
 from api.schemas.address import AddressList
+from api.schemas.product import ProductSchema
 
 class OrderSchema(BaseModel):
     user: UserSchema
@@ -12,4 +13,6 @@ class OrderSchema(BaseModel):
     address: AddressList
     created: str
 
-
+class OrderSchemaOpen(BaseModel):
+    order: OrderSchema
+    order_item:  List[ProductSchema] = []

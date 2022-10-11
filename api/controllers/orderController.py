@@ -1,6 +1,7 @@
+from itertools import product
 import logging
 from fastapi import HTTPException, status
-from api.controllers.orderItemController import create_order_item
+from api.controllers.orderItemController import create_order_item, get_orders_items_by_order
 from api.middlewares.converters import datetime_string, object_id_string, fix_id
 from api.schemas.cart import CartItemsSchema
 from api.schemas.order import OrderSchema
@@ -52,6 +53,33 @@ async def get_order_open(user_id):
     cart = await db.order_collection.find_one({"$and": [{'user._id': user_id}, {'paid': False}]})
     if cart: 
         return fix_id(cart)
+
+
+# consulta ao carrinho de compras aberto e seus produtos
+async def get_orders_and_products(user_id):
+
+    try: 
+        order = await get_order_open(user_id)
+        
+        if order: 
+            orders_items = await get_orders_items_by_order(order['_id'])
+            products = []
+
+            for i in range(len(orders_items)):
+                for key, value in orders_items[i].items():
+                    if key == 'product':
+                        products.append(value)
+            order_open = {
+                "order": order,
+                "products": products
+            }
+            return order_open
+            
+    except Exception as error: 
+        logging.exception(f'get_orders_and_products.error: {error}')
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST)
+    
+   
 
 
 async def update_order_price(order: OrderSchema, cart: CartItemsSchema, product: ProductSchema):
