@@ -16,3 +16,11 @@ class OrderSchema(BaseModel):
 class OrderSchemaOpen(BaseModel):
     order: OrderSchema
     order_item:  List[ProductSchema] = []
+
+
+class OrderList(OrderSchema):
+    _id: str
+    code: str
+    
+    class Config:
+        orm_mode = True

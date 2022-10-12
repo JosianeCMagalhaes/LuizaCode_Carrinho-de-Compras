@@ -1,11 +1,11 @@
 from fastapi import APIRouter, status, HTTPException
 from starlette.responses import JSONResponse
-from api.controllers.orderController import create_cart, delete_order, get_order_by_id, get_order_open, get_orders_and_products
+from api.controllers.orderController import create_cart, delete_order, get_all_orders, get_order_by_id, get_order_open, get_orders_and_products
 from api.controllers.productController import get_product_by_code
 from api.controllers.userController import get_user_by_email
 from api.schemas.cart import CartItemsSchema
 
-from api.schemas.order import OrderSchemaOpen, OrderSchema, OrderSchemaOpen
+from api.schemas.order import OrderList, OrderSchemaOpen, OrderSchema, OrderSchemaOpen
 from api.utils.descriptions import DESCRIPTION_CREATE_CART
 
 # from api.controllers.orderController import 
@@ -63,8 +63,24 @@ async def search_order_open(email: str):
             detail={'error': 'Email inválido. Usuário não encontrado'}
     )
 
+@router.get('', response_model=OrderList)
+async def get_orders():
+    orders = await get_all_orders()
+
+    if orders:
+
+        return JSONResponse(
+            status_code=status.HTTP_200_OK,
+            content={'Pedidos': orders }
+        ) 
+
+    raise HTTPException(
+        status_code=status.HTTP_400_BAD_REQUEST
+    )
+
+
 # exclui um pedido do sistema pelo id que deve ser passado como parametro
-@router.delete('/carrinho')
+@router.delete('/carrinho/{id}')
 async def delete_order_by_id(id: str):
 
     order = await get_order_by_id(id)

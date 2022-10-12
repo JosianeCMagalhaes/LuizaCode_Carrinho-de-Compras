@@ -84,7 +84,7 @@ async def delete_product_by_code(code: str):
         detail={'error': 'Produto não encontrado'}
     )
 
-
+# busca todos os produtos
 @router.get('/', response_model=ProductList)
 async def get_products():
     products = await get_all_products()
