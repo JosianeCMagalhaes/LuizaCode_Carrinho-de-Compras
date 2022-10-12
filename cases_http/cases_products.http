@@ -1,0 +1,37 @@
+### get all products
+GET http://127.0.0.1:8000/produtos/ HTTP/1.1
+Content-Type: application/json
+
+
+### create a product
+POST http://127.0.0.1:8000/produtos/cadastro HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Leite Integral",
+  "description": "Leite Longa Vida Ninho Integral 1l",
+  "price": 7.5,
+  "category": "Limpeza",
+  "quant_stock": 15
+}
+
+### search a product by code
+GET http://127.0.0.1:8000/produtos/337275534 HTTP/1.1
+Content-Type: application/json
+
+
+### update a product by code
+PUT http://127.0.0.1:8000/produtos/337275534 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Leite Integral",
+  "description": "Leite Ninho Integral 2l",
+  "price": 7.5,
+  "category": "Limpeza",
+  "quant_stock": 15
+}
+
+### delete product by code
+DELETE HTTP://127.0.0.1:8000/produtos/337275534 HTTP/1.1
+Content-Type: application/json

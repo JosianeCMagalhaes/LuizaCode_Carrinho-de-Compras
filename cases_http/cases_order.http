@@ -1,0 +1,25 @@
+### get all orders
+GET http://127.0.0.1:8000/pedidos HTTP/1.1
+Content-Type: application/json
+
+### create a cart
+POST http://127.0.0.1:8000/pedidos/carrinho HTTP/1.1
+Content-Type: application/json
+
+{
+    "user": {
+        "email": "josem-maria@email.com"},
+    "product": {
+        "code": "545004601",
+        "quantity": 2
+    }
+}
+
+### get a order open by user
+GET http://127.0.0.1:8000/pedidos/carrinho?email=email2@email.com HTTP/1.1
+Content-Type: application/json
+
+
+### delete a order by id
+DELETE http://127.0.0.1:8000/pedidos/6344fce5d24cbebe3c1db8b1 HTTP/1.1
+Content-Type: application/json

@@ -54,6 +54,17 @@ async def get_order_open(user_id):
     if cart: 
         return fix_id(cart)
 
+async def get_all_orders():
+    try:
+
+        orders_db = db.order_collection.find()
+        orders = await orders_db.to_list(length=10)
+        list(map(fix_id, orders))
+        return orders
+
+    except Exception as error:
+        logging.exception(f'get_all_product.error: {error}')
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST)
 
 # consulta ao carrinho de compras aberto e seus produtos
 async def get_orders_and_products(user_id):

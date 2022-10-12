@@ -1,0 +1,25 @@
+### create a address
+POST http://127.0.0.1:8000/enderecos/cadastro HTTP/1.1
+Content-Type: application/json
+
+{
+    "user": {
+        "name": "Usuário Exemplo",
+        "email": "usuario_exemplo@gmail.com",
+        "password": "senha",
+        "is_active": true,
+        "is_admin": false
+    },
+    "address": [{
+            "street": "Rua vinte e cinco, nº 5",
+            "cep": "123456789",
+            "district": "São Paulo",
+            "city": "São Paulo",
+            "state": "São Paulo",
+            "is_delivery": true
+        }]
+}
+
+### get address by user email
+GET http://127.0.0.1:8000/enderecos?email=usuario_exemplo@gmail.com HTTP/1.1
+Content-Type: application/json
