@@ -14,3 +14,10 @@ class UserSchema(BaseModel):
 
 class UserEmail(BaseModel):
     email: EmailStr = Field(unique=True, index=True)
+
+class UserList(UserSchema):
+    _id: str
+    email: EmailStr
+    
+    class Config:
+        orm_mode = True
