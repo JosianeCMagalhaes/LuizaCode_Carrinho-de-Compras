@@ -45,7 +45,7 @@
 * [4. Instalação da aplicação](#4-instalação-da-aplicação)
 * [5. Bibliotecas instaladas](#5-bibliotecas-instaladas)
 * [6. Documentação Interativa da API](#6-documentação-interativa-da-API)
-* [7. Documentação do Heroku](#7-documentação-do-heroku:)
+* [7. Documentação do Heroku](#7-documentação-do-heroku)
 * [8. Autoras](#8-autoras)
 * [9. Contato](#9-contato)
 
