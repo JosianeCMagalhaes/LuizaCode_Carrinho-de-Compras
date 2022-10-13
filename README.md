@@ -40,11 +40,11 @@
 ## Índice
 
 * [1. Sobre](#1-sobre)
-* [2. Requisitos obrigatórios do desafio](#2-requisitos-obrigatórios-do-desafio)
+* [2. O Projeto Carrinho de Compras](#2-o-projeto-carrinho-de-compras)
 * [3. Tecnologias utilizadas](#3-tecnologias-utilizadas)
 * [4. Instalação da aplicação](#4-instalação-da-aplicação)
 * [5. Bibliotecas instaladas](#5-bibliotecas-instaladas)
-* [6. Documentação Interativa da API](#6-documentação-interativa-da-API)
+* [6. Documentação Interativa da API](#6-documentação-interativa-da-api)
 * [7. Documentação do Heroku](#7-documentação-do-heroku)
 * [8. Autoras](#8-autoras)
 * [9. Contato](#9-contato)
@@ -58,7 +58,7 @@ Uma API assíncrona com FastAPI e MongoDB, usando o pacote Motor para interagir 
 <!--Implementado com testes com TestClient e CI/CD no GitHub Actions com deploy no Heroku.-->
 <br />
   
-## 2. Requisitos obrigatórios do desafio
+## 2. O Projeto Carrinho de Compras
 <!--Adicionar requisitos obrigatórios do porojeto-->
   -  
   - 
