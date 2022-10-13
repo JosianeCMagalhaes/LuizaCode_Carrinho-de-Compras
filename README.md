@@ -149,8 +149,9 @@ Documentação automática alternativa (fornecida por [ReDoc](https://github.com
   <!--print da documentação-->
   
 ## 8. Documentação do [Heroku](https://www.heroku.com/about):
-```
-```
+   ```
+   https://shopping-cart-luizacode5.herokuapp.com/docs
+   ```
 
 ## 9. Autoras
 
