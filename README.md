@@ -41,13 +41,14 @@
 
 * [1. Sobre](#1-sobre)
 * [2. O Projeto Carrinho de Compras](#2-o-projeto-carrinho-de-compras)
-* [3. Tecnologias utilizadas](#3-tecnologias-utilizadas)
-* [4. Instalação da aplicação](#4-instalação-da-aplicação)
-* [5. Bibliotecas instaladas](#5-bibliotecas-instaladas)
-* [6. Documentação Interativa da API](#6-documentação-interativa-da-api)
-* [7. Documentação do Heroku](#7-documentação-do-heroku)
-* [8. Autoras](#8-autoras)
-* [9. Contato](#9-contato)
+* [3. Implementações Futuras](#3-implementações-futuras)
+* [4. Tecnologias utilizadas](#4-tecnologias-utilizadas)
+* [5. Instalação da aplicação](#5-instalação-da-aplicação)
+* [6. Bibliotecas instaladas](#6-bibliotecas-instaladas)
+* [7. Documentação Interativa da API](#7-documentação-interativa-da-api)
+* [8. Documentação do Heroku](#8-documentação-do-heroku)
+* [9. Autoras](#9-autoras)
+* [10. Contato](#10-contato)
 
 ***
 
@@ -59,20 +60,32 @@ Uma API assíncrona com FastAPI e MongoDB, usando o pacote Motor para interagir 
 <br />
   
 ## 2. O Projeto Carrinho de Compras
-<!--Adicionar requisitos obrigatórios do porojeto-->
-  -  
-  - 
-  - 
-  -
+<!--Adicionar requisitos do porojeto-->
+O Projeto Carrinho de Compras foi proposto como projeto final do curso, onde o objetivo é desenvolver um serviço de API Rest resolvendo a funcionalidade de Carrinho de Compra do cliente. Esse serviço deve atender os seguintes requisitos:
 
-## 3. Tecnologias utilizadas
+- Adicionar um produto ao carrinho do cliente;
+- Remover um produto do carrinho do cliente;
+- Consultar produtos do carrinho do cliente;
+
+## 3. Implementações Futuras
+
+- Performance (Volume de milhões de transações por dia);
+- Testes automatizados e integração;
+- Logs / Rastreabilidade;
+- Tratamento de Exceção;
+- Front-end da aplicação;
+- Autenticação / Login da API;
+- Alterar banco de dados;
+- Implementar testes unitários.
+ 
+## 4. Tecnologias utilizadas
 <!--Adicionar tecnologias utilizadas-->
 Para o desenvolvimento dessa aplicação foi utilizado o framework FastAPI para a criação da API, juntamente com o banco de dados MongoDB... 
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [MongoDB](https://www.mongodb.com/)
 - [Python](https://www.python.org/)
 
-## 4. Instalação da aplicação
+## 5. Instalação da aplicação
 
 Para instalação é necessário ter o Python e o FastAPI instalados na máquina.
 <!--Adicionar os passos para instalação, referência: https://www.alura.com.br/artigos/como-criar-apis-python-usando-fastapi-->
@@ -116,12 +129,12 @@ Para instalação é necessário ter o Python e o FastAPI instalados na máquina
   Dica: você pode instalar a extensão "Rest Client" no Visual Studio Code para executar testes diretamente nos arquivos *.http
     ```
 
-## 5. Bibliotecas instaladas
+## 6. Bibliotecas instaladas
 - [fastapi](https://fastapi.tiangolo.com/),
 - [uvicorn](https://www.uvicorn.org/),
 - [motor](https://motor.readthedocs.io/en/stable/).
   
-## 6. Documentação Interativa da API
+## 7. Documentação Interativa da API
 
 Documentação automática interativa da API (fornecida por [Swagger UI](https://github.com/swagger-api/swagger-ui)):
    ```
@@ -135,15 +148,15 @@ Documentação automática alternativa (fornecida por [ReDoc](https://github.com
    ```
   <!--print da documentação-->
   
-## 7. Documentação do [Heroku](https://www.heroku.com/about):
+## 8. Documentação do [Heroku](https://www.heroku.com/about):
 ```
 ```
 
-## 8. Autoras
+## 9. Autoras
 
 Projeto desenvolvido por: **Josiane Magalhães, Aline Marques, Nathália Rodrigues, Simone Lima, Vanessa Lima** 👋
 
-## 9. Contato
+## 10. Contato
 
 **Linkedin**: 
 - [Josiane Magalhães](https://www.linkedin.com/in/josianemagalhaes/)
