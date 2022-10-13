@@ -1,6 +1,8 @@
-<p align="center">
-  <img alt="luizacode" title="banner-luizacode" src="https://user-images.githubusercontent.com/62856269/193715776-0a521946-b779-4b8e-a293-e772e835812a.png"/>
+<!--<p align="center">
+  <img alt="luizacode" title="banner-luizacode" src="https://user-images.githubusercontent.com/62856269/193715776-0a521946-b779-4b8e-a293-e772e835812a.png"/>-->
 <!--Adicionar logo luizacode-opcional-->
+<p align="center">
+  <img alt="Fast-Mercado" title="banner-FastMercado" src="https://user-images.githubusercontent.com/62856269/195171619-4dedf943-90f0-4796-ad03-2b63c7c07bab.png"/>
 </p>
 
 <h1 align="center">
@@ -41,15 +43,17 @@
 * [2. Requisitos obrigatórios do desafio](#2-requisitos-obrigatórios-do-desafio)
 * [3. Tecnologias utilizadas](#3-tecnologias-utilizadas)
 * [4. Instalação da aplicação](#4-instalação-da-aplicação)
-* [5. Bibliotecas Python](#5-bibliotecas-python)
-* [6. Autoras](#6-autoras)
-* [7. Contato](#7-contato)
+* [5. Bibliotecas instaladas](#5-bibliotecas-instaladas)
+* [6. Documentação Interativa da API](#6-documentação-interativa-da-API)
+* [7. Documentação do Heroku](#7-documentação-do-heroku:)
+* [8. Autoras](#8-autoras)
+* [9. Contato](#9-contato)
 
 ***
 
 ## 1. Sobre
 <!--Adicionar descrição do projeto-->
-Uma API assíncrona com FastAPI e MongoDB, usando o pacote Motor para interagir com o MongoDB de forma assíncrona com deploy no Heroku. A aplicação foi desenvolvida visando atender os requisitos do projeto final do Luiza Code, com FastAPI, MongoDB e Python.
+Uma API assíncrona com FastAPI e MongoDB, usando o pacote Motor para interagir com o MongoDB de forma assíncrona com deploy no Heroku. A aplicação foi desenvolvida visando atender os requisitos do projeto final do Luiza Code do Luizalabs, com FastAPI, MongoDB e Python.
   
 <!--Implementado com testes com TestClient e CI/CD no GitHub Actions com deploy no Heroku.-->
 <br />
@@ -125,51 +129,15 @@ Documentação automática interativa da API (fornecida por [Swagger UI](https:/
    ```
   <!--print da documentação-->
   
-## 7. Documentação Alternativa da API
 Documentação automática alternativa (fornecida por [ReDoc](https://github.com/Redocly/redoc)):
    ```
    http://127.0.0.1:8000/redoc
    ```
   <!--print da documentação-->
   
-## 8. Documentação do [Heroku](https://www.heroku.com/about):
+## 7. Documentação do [Heroku](https://www.heroku.com/about):
 ```
 ```
-
-
-<!--## 5. API Endpoints-->
-<!--Adicionar os end points solicitados no projeto-->
-  
-<!--exemplos
-- **endpoint:** `/users/register/`
-- **method:** `POST`
-- **params:** 
-
-- **200 Response:**
-
-#### Criando um produto
-
-- **endpoint:** `/products/`
-- **method:** `POST`
-- **params:** Em Basic passar o username e password
-- **200 Response:**
-
-- **201 Response**
-
-#### Listando Produtos
-
-- **endpoint:** `/products/`
-- **method:** `GET`
-
-
-- **201 Response:**-->
-
-
-
-<p align="center">
-  <img alt="" title="" src="" />
-<!--Adicionar imagem da documentação da API-opcional-->
-</p>
 
 ## 8. Autoras
 
